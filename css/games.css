@@ -1,0 +1,140 @@
+/* Az egyes mesék játékainak saját díszletei. A színek a style.css tokenjeiből jönnek. */
+
+/* 3. Henrik – zongora a homokban */
+.beach { background: linear-gradient(var(--foam) 0 22%, #7cc6d6 22% 34%, var(--sand) 34%); padding: 16px; display: grid; gap: 14px; justify-items: center; min-height: 420px; align-content: start; }
+.beach-people { font-size: clamp(2.2rem, 7vw, 3.4rem); display: flex; gap: 16px; margin-top: 4%; }
+.beach-msg { font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; min-height: 2em; text-align: center; }
+.keys { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; width: min(100%, 620px); }
+.keys.busy { pointer-events: none; }
+.sand-key {
+  border: 4px dashed rgba(120, 80, 30, .45); background: rgba(255, 255, 255, .25); border-radius: 12px;
+  aspect-ratio: 1 / 2; cursor: pointer; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 10px;
+  font-family: var(--font-display); font-weight: 800; font-size: clamp(1rem, 3.5vw, 1.4rem); touch-action: manipulation;
+  transition: background .08s, transform .08s;
+}
+.sand-key.lit { background: var(--key); color: #fff; transform: translateY(3px); border-style: solid; border-color: var(--key); }
+
+/* 4. Halpiac */
+.scene { container-type: inline-size; }
+.market { background: linear-gradient(#cfe9f2 0 36%, #b98b56 36% 100%); }
+@media (max-width: 600px) { .market { aspect-ratio: 4 / 5; } }
+.market-water { position: absolute; left: 0; right: 0; top: 0; height: 36%; background: linear-gradient(#bfe3ef, #3c97b8); }
+.market-pier { position: absolute; right: 0; top: 30%; width: 26%; height: 14%; background: repeating-linear-gradient(90deg, #8a5a2e 0 18px, #9c6a3a 18px 36px); }
+.stall { position: absolute; width: 28%; height: 8%; border-radius: 10px 10px 0 0;
+  background: repeating-linear-gradient(90deg, var(--coral) 0 24px, var(--paper) 24px 48px); box-shadow: 0 6px 0 rgba(0,0,0,.15); }
+.prop { position: absolute; transform: translate(-50%, -50%); pointer-events: none; }
+.print {
+  position: absolute; transform: translate(-50%, -50%) rotate(var(--rot)); border: 0; background: none; cursor: pointer;
+  font-size: max(3.4cqw, 18px); padding: max(2cqw, 10px); opacity: .5; filter: saturate(.2) brightness(.6);
+}
+.print.found { opacity: 1; filter: none; }
+.print.found::after { content: ""; position: absolute; inset: 0; border: 3px solid var(--sun); border-radius: 50%; animation: pop .3s; }
+.goat-walker { position: absolute; top: 46%; border: 0; background: none; cursor: pointer; font-size: 6cqw; transition: transform .2s; }
+.market.night { filter: brightness(.55) saturate(.6) hue-rotate(200deg); transition: filter 1s; }
+
+/* 5. Két kút */
+.well { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 16px; padding: 18px; min-height: 380px; background: linear-gradient(#ffe7a8, var(--sand-deep)); }
+@media (max-width: 620px) { .well { grid-template-columns: 1fr; } }
+.well-pit { position: relative; background: #d9ae62; border-radius: 16px; min-height: 280px; overflow: hidden; }
+.well-hole { position: absolute; left: 50%; top: 0; width: 46%; transform: translateX(-50%); height: 18%; background: #7a5226; border-radius: 0 0 40px 40px; transition: height .4s; display: flex; align-items: flex-end; justify-content: center; }
+.well-hole::before { content: ""; position: absolute; top: 0; bottom: 30px; left: 50%; border-left: 4px dashed #f2d38b; }
+.digger { font-size: 2.6rem; position: relative; z-index: 1; padding-bottom: 4px; }
+.water { position: absolute; left: 0; right: 0; bottom: 0; height: 0; background: #4fb3d9; border-radius: 0 0 40px 40px; transition: height 1.4s; }
+.water.up { height: 70%; }
+.well-side { display: grid; gap: 14px; align-content: center; justify-items: center; text-align: center; }
+.well-who { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; }
+.meter { position: relative; width: 100%; height: 44px; background: #f7e3b8; border-radius: 999px; border: 4px solid #9c6a3a; overflow: hidden; }
+.meter-zone { position: absolute; top: 0; bottom: 0; background: var(--leaf); }
+.meter-mark { position: absolute; top: -4px; bottom: -4px; width: 8px; margin-left: -4px; background: var(--ink); border-radius: 4px; }
+.well-depth { font-weight: 800; font-variant-numeric: tabular-nums; }
+
+/* 6. Ottó – sakk */
+.chess { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 16px; padding: 18px; align-items: center; background: linear-gradient(#bfe3ef, #6fb4cc); }
+@media (max-width: 620px) { .chess { grid-template-columns: 1fr; } }
+.board { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: repeat(5, minmax(0, 1fr)); width: min(100%, 440px); aspect-ratio: 1; margin: 0 auto; border: 8px solid #6b4423; border-radius: 10px; }
+.sq { border: 0; padding: 0; min-height: 0; overflow: hidden; cursor: pointer; font-size: clamp(1.4rem, 6vw, 2.6rem); font-family: var(--font-emoji); display: grid; place-items: center; position: relative; }
+.sq.light { background: #f1dcb5; }
+.sq.dark { background: #b98b56; }
+.sq.knight { font-family: "Segoe UI Symbol", "DejaVu Sans", serif; color: var(--ink); font-size: clamp(2rem, 9vw, 3.6rem); }
+.sq.can::after { content: ""; position: absolute; inset: 18%; border-radius: 50%; background: rgba(63, 157, 93, .55); box-shadow: 0 0 0 4px rgba(63, 157, 93, .3); animation: bob 1.4s ease-in-out infinite; }
+.sq.can.shell::after { background: rgba(255, 201, 60, .45); }
+.chess-side { display: grid; justify-items: center; gap: 10px; text-align: center; }
+.otto-big { font-size: clamp(4rem, 14vw, 7rem); animation: bob 3s ease-in-out infinite; }
+.chess-msg { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; background: var(--paper); border-radius: 16px; padding: 10px 14px; }
+.chess-msg:empty { display: none; }
+
+/* 7. Nevető falu – memóriakártyák */
+.village { --gray: 1; padding: 18px; display: grid; gap: 14px; justify-items: center;
+  background: linear-gradient(#9fd2f0, #cdeab0 60%, #f6c46a); filter: grayscale(var(--gray)); transition: filter .8s; }
+.sign { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.2rem, 4vw, 1.8rem); background: #5d5d5d; color: #fff; padding: 6px 18px; border-radius: 8px; border: 4px solid #3a3a3a; text-align: center; }
+.sign.happy { background: var(--coral); border-color: var(--coral-deep); animation: pop .4s; }
+.cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; width: min(100%, 560px); }
+@media (max-width: 460px) { .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.card { border: 0; background: none; padding: 0; cursor: pointer; aspect-ratio: 3 / 4; perspective: 600px; }
+.card-inner { position: relative; display: block; width: 100%; height: 100%; transition: transform .35s; transform-style: preserve-3d; }
+.card.open .card-inner { transform: rotateY(180deg); }
+.card-back, .card-front { position: absolute; inset: 0; border-radius: 14px; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: grid; place-items: center; align-content: center; gap: 4px; box-shadow: 0 4px 0 rgba(0,0,0,.2); }
+.card-back { background: repeating-linear-gradient(45deg, #6d7a85 0 10px, #7d8b96 10px 20px); color: #fff; font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; }
+.card-front { background: var(--paper); transform: rotateY(180deg); padding: 6px; }
+.card-front .emoji { font-size: clamp(2rem, 7vw, 3rem); }
+.card-front small { font-weight: 800; font-size: clamp(.7rem, 2.4vw, .9rem); line-height: 1.1; text-align: center; }
+.card.matched .card-front { background: #d9f2c4; box-shadow: 0 0 0 4px var(--leaf); }
+
+/* 8. Varjak – bokrok */
+.garden-jp { position: relative; padding: 20px; min-height: 400px; background: linear-gradient(#ffd9e4, #f7b8c9 18%, #9cc58a 18%); overflow: hidden; }
+.holes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 18px; width: min(100%, 560px); margin: 30px auto 0; }
+.hole { position: relative; height: 110px; overflow: hidden; }
+.bush { position: absolute; left: 0; right: 0; bottom: 0; height: 46px; background: radial-gradient(circle at 25% 60%, #3f8a46 30%, transparent 31%), radial-gradient(circle at 50% 40%, #4a9a51 34%, transparent 35%), radial-gradient(circle at 75% 60%, #3f8a46 30%, transparent 31%); z-index: 2; pointer-events: none; }
+.pop { position: absolute; left: 50%; bottom: -80px; transform: translateX(-50%); border: 0; background: none; cursor: pointer; width: 90px; height: 100px; transition: bottom .16s ease-out; display: grid; justify-items: center; align-content: end; padding: 0; z-index: 1; touch-action: manipulation; }
+.hole.up .pop { bottom: 6px; }
+.face { font-size: 3.4rem; }
+.hat { width: 58px; height: 26px; background: linear-gradient(#a7b0b8, #5d666e); border-radius: 30px 30px 6px 6px; margin-bottom: -10px; position: relative; z-index: 1; box-shadow: inset 0 -4px 0 rgba(0,0,0,.25); transition: transform .4s, opacity .4s; }
+.hole.is-tanaka .hat { visibility: hidden; }
+.hole.bonk .hat { transform: translate(40px, -80px) rotate(200deg); opacity: 0; }
+.hole.bonk .face { transform: scale(.9) rotate(-8deg); }
+.petals::before, .petals::after { content: "🌸"; font-family: var(--font-emoji); position: absolute; top: -20px; font-size: 22px; animation: petal 7s linear infinite; }
+.petals::before { left: 20%; }
+.petals::after { left: 70%; animation-delay: 3s; }
+@keyframes petal { to { transform: translate(-60px, 460px) rotate(360deg); } }
+
+/* 10. Kert a Sós-szigeten */
+.farm { position: relative; padding: 20px 18px 70px; min-height: 420px; background: linear-gradient(#cfe6ef 0 18%, #c7b48b 18%); transition: background 1s; }
+.farm.green { background: linear-gradient(#cfe6ef 0 18%, #8cc56f 18%); }
+.farm-wall { height: 26px; margin: -6px -18px 16px; background: repeating-linear-gradient(90deg, #9a9a9a 0 40px, #858585 40px 44px); border-bottom: 4px solid #6c6c6c; }
+.plots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; width: min(100%, 480px); margin: 0 auto; }
+.plot { position: relative; aspect-ratio: 1.3; border: 0; border-radius: 16px; background: #7a5530; box-shadow: inset 0 -8px 0 rgba(0,0,0,.2); cursor: pointer; display: grid; place-items: center; touch-action: manipulation; }
+.plot .plant { font-size: clamp(1.8rem, 7vw, 3rem); }
+.plot .need { position: absolute; top: 4px; right: 6px; font-size: 1.6rem; animation: bob 1s ease-in-out infinite; }
+.plot.empty::after { content: "+"; color: rgba(255,255,255,.5); font-size: 2rem; font-weight: 800; }
+.plot.ripe { background: #8a6234; box-shadow: inset 0 -8px 0 rgba(0,0,0,.2), 0 0 0 4px var(--sun); }
+.farm-goat { position: absolute; border: 0; background: none; cursor: pointer; font-size: 3rem; transition: left 3s linear, top 3s linear; z-index: 3; }
+.farm-goat.sneaking { filter: drop-shadow(0 0 8px var(--coral)); }
+.basket { position: absolute; right: 16px; bottom: 12px; font-size: 2.6rem; display: flex; align-items: center; gap: 6px; }
+.basket b { font-family: var(--font-display); font-size: 1.8rem; font-variant-numeric: tabular-nums; }
+
+/* 12. Születésnapi buli */
+.party { padding: 18px; display: grid; gap: 16px; background: linear-gradient(#fff2d6, #ffd9b0); min-height: 420px; }
+.party-msg { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; text-align: center; min-height: 1.6em; }
+.guests { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.gifts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 560px) { .guests, .gifts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.guest, .gift { border: 0; border-radius: 16px; padding: 10px 6px; display: grid; justify-items: center; gap: 2px; cursor: pointer; text-align: center; position: relative; touch-action: none; }
+.guest { background: var(--paper); box-shadow: 0 4px 0 var(--sand-deep); }
+.guest .emoji { font-size: 2.4rem; }
+.guest small, .gift small { font-weight: 800; font-size: .85rem; line-height: 1.15; }
+.guest .got { position: absolute; top: 4px; right: 6px; font-size: 1.6rem; }
+.guest.happy { background: #d9f2c4; box-shadow: 0 4px 0 var(--leaf); }
+.gift { background: var(--foam); box-shadow: 0 4px 0 #9ccbd6; }
+.gift .emoji { font-size: 2.2rem; }
+.gift.selected { box-shadow: 0 0 0 4px var(--coral); }
+.gift.dragging { z-index: 10; box-shadow: 0 12px 20px rgba(0,0,0,.25); transition: none; }
+.gift.given { opacity: .25; cursor: default; }
+.cake-wrap { display: grid; justify-items: center; gap: 8px; }
+.cake-dragon { border: 0; background: none; cursor: pointer; font-size: 4.4rem; animation: bob 2.4s ease-in-out infinite; }
+.cake { display: grid; justify-items: center; }
+.cake-emoji { font-size: clamp(7rem, 26vw, 11rem); margin-top: -18px; }
+.candles { display: flex; gap: 10px; position: relative; z-index: 1; }
+.candle { width: 22px; height: 70px; border: 0; border-radius: 6px; cursor: pointer; background: repeating-linear-gradient(160deg, var(--paper) 0 8px, var(--coral) 8px 14px); position: relative; padding: 0; }
+.candle .flame { position: absolute; left: 50%; top: -26px; width: 16px; height: 24px; margin-left: -8px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: radial-gradient(circle at 50% 70%, #fff6b0, #ffb12b 60%, transparent 70%); opacity: 0; transition: opacity .2s; }
+.candle.lit .flame { opacity: 1; animation: flicker .3s ease-in-out infinite alternate; }
+@keyframes flicker { to { transform: scale(1.1, .9) rotate(4deg); } }

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A világjáró Babuktin</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/games.css">
+</head>
+<body>
+
+<!-- Címképernyő / főmenü -->
+<section id="screen-title" class="screen screen-title">
+  <div class="title-sky">
+    <div class="sun" aria-hidden="true"></div>
+    <div class="title-ship" aria-hidden="true">⛵</div>
+    <div class="title-waves" aria-hidden="true"></div>
+  </div>
+  <div class="title-card">
+    <p class="eyebrow">Mesés kalandjáték 6–9 éveseknek</p>
+    <h1 class="game-title"><span>A világjáró</span> Babuktin</h1>
+    <p class="title-crew" aria-hidden="true"><span>🤠</span><span>🐐</span><span>🐯</span></p>
+    <p class="title-lead">Hajózz Babuktinnal, Makkossal és Csíkossal tizenkét kalandon át!
+      Minden mese egy új játék. Ha megoldod, kinyílik a következő.</p>
+    <div class="menu">
+      <button id="btn-continue" class="btn btn-primary" type="button">Folytatás</button>
+      <button id="btn-new" class="btn" type="button">Új játék</button>
+      <button id="btn-map" class="btn" type="button">Mesetérkép</button>
+    </div>
+    <div class="settings">
+      <button id="btn-sound" class="chip" type="button" aria-pressed="true">🔔 Hang: be</button>
+      <button id="btn-speech" class="chip speech-only" type="button" aria-pressed="false">🗣️ Felolvasás: ki</button>
+    </div>
+  </div>
+</section>
+
+<!-- Mesetérkép / szintválasztó -->
+<section id="screen-map" class="screen screen-map" hidden>
+  <header class="bar">
+    <button class="btn btn-small" type="button" data-go="title">⟵ Menü</button>
+    <h2>Mesetérkép</h2>
+    <p id="invites" class="invites"></p>
+  </header>
+  <div id="map-grid" class="map-grid"></div>
+</section>
+
+<!-- Mese bevezető -->
+<section id="screen-intro" class="screen screen-intro" hidden>
+  <header class="bar">
+    <button class="btn btn-small" type="button" data-go="map">⟵ Térkép</button>
+    <p id="intro-place" class="place"></p>
+  </header>
+  <article class="intro-card">
+    <div id="intro-icon" class="intro-icon" aria-hidden="true"></div>
+    <p id="intro-num" class="eyebrow"></p>
+    <h2 id="intro-title"></h2>
+    <div id="intro-story" class="story"></div>
+    <div class="howto">
+      <b>Feladat:</b> <span id="intro-howto"></span>
+    </div>
+    <div class="row">
+      <button id="btn-start" class="btn btn-primary" type="button">Indulás! ⛵</button>
+      <button id="btn-read-intro" class="btn speech-only" type="button">🔊 Felolvasom</button>
+    </div>
+  </article>
+</section>
+
+<!-- Játék -->
+<section id="screen-game" class="screen screen-game" hidden>
+  <header class="bar">
+    <button id="btn-quit" class="btn btn-small" type="button">⟵ Térkép</button>
+    <h2 id="game-title" class="game-name"></h2>
+    <p id="hud" class="hud" aria-live="polite"></p>
+  </header>
+  <div id="stage" class="stage"></div>
+  <p id="toast" class="toast" aria-live="polite" hidden></p>
+</section>
+
+<!-- Győzelem -->
+<section id="screen-win" class="screen screen-win" hidden>
+  <div class="win-card">
+    <div class="confetti" aria-hidden="true"></div>
+    <p class="eyebrow">Mese megoldva!</p>
+    <h2 id="win-title"></h2>
+    <div id="win-friend" class="friend"></div>
+    <blockquote id="win-moral" class="moral"></blockquote>
+    <div class="row">
+      <button id="btn-next" class="btn btn-primary" type="button">Következő mese ▶</button>
+      <button class="btn" type="button" data-go="map">Mesetérkép</button>
+    </div>
+  </div>
+</section>
+
+<!-- Párbeszéd / kérdések -->
+<div id="dialog" class="dialog" hidden>
+  <div class="dialog-card" role="dialog" aria-modal="true" aria-labelledby="dialog-name">
+    <div class="dialog-who">
+      <span id="dialog-emoji" class="who-emoji" aria-hidden="true"></span>
+      <b id="dialog-name"></b>
+      <button id="dialog-speak" class="chip speech-only" type="button" aria-label="Felolvasás">🔊</button>
+    </div>
+    <p id="dialog-text" class="dialog-text"></p>
+    <div id="dialog-options" class="dialog-options"></div>
+    <p id="dialog-feedback" class="dialog-feedback" aria-live="polite"></p>
+  </div>
+</div>
+
+<script src="js/engine.js"></script>
+<script src="js/games/01-aranyora.js"></script>
+<script src="js/games/02-sarkany.js"></script>
+<script src="js/games/03-henrik.js"></script>
+<script src="js/games/04-halak.js"></script>
+<script src="js/games/05-kutak.js"></script>
+<script src="js/games/06-otto.js"></script>
+<script src="js/games/07-nevetes.js"></script>
+<script src="js/games/08-varjak.js"></script>
+<script src="js/games/09-kobak.js"></script>
+<script src="js/games/10-kincs.js"></script>
+<script src="js/games/11-koncert.js"></script>
+<script src="js/games/12-hazaer.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
