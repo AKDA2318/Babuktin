@@ -26,7 +26,7 @@ Babuktin.register({
       { guest: 'Tanaka úr', ge: '🙇', gift: '🏮', what: 'Papírlámpás' },
       { guest: 'Kobak', ge: '👦', gift: B.emoji('🪢', '➰'), what: 'Kötél tíz nyolcas csomóval' },
       { guest: 'Zafir és Kamal', ge: '👳', gift: B.emoji('🏺', '🫖'), what: 'Víz a két kútból' },
-      { guest: 'Halmos úr', ge: '🧑‍🍳', gift: '🐟', what: 'Egy hatalmas hal' },
+      { guest: 'Halmos úr', ge: '👨‍🍳', gift: '🐟', what: 'Egy hatalmas hal' },
       { guest: 'Mira néni', ge: '👵', gift: '🥕', what: 'Zöldség a Sós-szigetről' },
       { guest: 'Feketeszakáll', ge: '🏴‍☠️', gift: B.emoji('🪗', '🎷'), what: 'A régi szájharmonika' },
       { guest: 'Ottó', ge: '🐙', gift: '♟️', what: 'Sakktábla egy kagylóval a sarkán' },

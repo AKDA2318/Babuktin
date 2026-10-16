@@ -19,7 +19,7 @@ számít. Az „Új játék” gomb elölről kezdi.
 
 | # | Mese | Játék |
 |---|------|-------|
-| 1 | Babuktin és az aranyóra | Úszás a víz alatt három sávban, akadályok kerülgetése |
+| 1 | Babuktin és az aranyóra | Kalandmese nyolc fejezetben: felszerelés a nyílzáporban, úszás a tengeri lények között (a delfin elvisz egy darabon), nyilak felfogása a pajzzsal, házépítés öt nap alatt |
 | 2 | A tüsszentő sárkány | Hozzávalók elkapása az üsttel, utána lámpásgyújtás Hapcival |
 | 3 | Henrik, a kalóz | Dallam-memória a homokba rajzolt zongorán |
 | 4 | A halak tolvaja | Rejtett lábnyomok keresése, utána a tolvaj kitalálása |

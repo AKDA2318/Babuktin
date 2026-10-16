@@ -139,6 +139,8 @@
         for (let i = 0; i < d.length; i += 4) {
           if (d[i + 3] > 0 && (Math.abs(d[i] - d[i + 1]) > 8 || Math.abs(d[i + 1] - d[i + 2]) > 8)) { ok = true; break; }
         }
+        // Az összetett (ZWJ) emojit a régebbi rendszerek több külön jelként rajzolják ki: ilyenkor szélesebb.
+        if (ok && ch.indexOf('‍') !== -1) ok = x.measureText(ch).width < x.measureText('😀').width * 1.5;
       } catch (e) { ok = true; }
       emojiCache[ch] = ok;
     }

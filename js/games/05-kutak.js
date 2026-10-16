@@ -17,7 +17,7 @@ Babuktin.register({
   async start(stage, api) {
     const B = Babuktin;
     const zafir = { e: '👳', name: 'Zafir' };
-    const kamal = { e: '🧔‍♂️', name: 'Kamal' };
+    const kamal = { e: '🧔', name: 'Kamal' };
 
     await api.talk([
       [zafir, 'Ez az én kutam! Én találtam meg először!'],
@@ -58,7 +58,7 @@ Babuktin.register({
     let depth = 0, pos = 0, dir = 1, speed = 0.7, zoneW = 0.26, zoneX = 0.37, cooldown = 0, done = false;
     function setRoles() {
       const zafirDigs = depth < GOAL / 2;
-      digger.textContent = zafirDigs ? '👳' : '🧔‍♂️';
+      digger.textContent = zafirDigs ? '👳' : '🧔';
       who.textContent = zafirDigs ? 'Zafir ás, Kamal tartja a kötelet.' : 'Most Kamal ás, Zafir tartja a kötelet!';
     }
     function placeZone() {

@@ -16,8 +16,8 @@ Babuktin.register({
 
   async start(stage, api) {
     const B = Babuktin;
-    const otter = B.emoji('🦦', '🦫');
-    const halmos = { e: '🧑‍🍳', name: 'Halmos úr' };
+    const otter = B.emoji('🦦', '🐾');
+    const halmos = { e: '👨‍🍳', name: 'Halmos úr' };
 
     stage.innerHTML =
       '<div class="scene market">' +
